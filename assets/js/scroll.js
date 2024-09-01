@@ -13,20 +13,12 @@ $(document).ready(() => {
     if (link.includes("#")) {
       if (!link.split("#")[1]) {
         // 到最上層
-        $("html, body").animate(
-          {
-            scrollTop: 0,
-          },
-          "smooth"
-        );
+        window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
         // 到當頁目標
-        $("html, body").animate(
-          {
-            scrollTop: $(link).offset().top,
-          },
-          "smooth"
-        );
+        const offsetTop = e.offsetTop;
+        const target = document.getElementById(`${link.split("#")[1]}`);
+        window.scrollTo({ top: target.offsetTop, behavior: "smooth" });
       }
     }
   });
