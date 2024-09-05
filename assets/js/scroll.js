@@ -10,8 +10,7 @@ $(document).ready(() => {
       window.open(link);
       return;
     }
-    if (link.includes("nav")) {
-      e.preventDefault();
+    if (link === "#nav") {
       $("#nav").addClass("open");
       return;
     }
