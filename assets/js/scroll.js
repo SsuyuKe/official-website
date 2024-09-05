@@ -11,6 +11,7 @@ $(document).ready(() => {
       return;
     }
     if (link.includes("nav")) {
+      e.preventDefault();
       $("#nav").addClass("open");
       return;
     }
