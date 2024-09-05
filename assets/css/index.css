@@ -35,7 +35,7 @@ html, body {
 }
 
 @media screen and (max-width: 768px) {
-  #nav:target {
+  #nav.open {
     display: flex !important;
     flex-direction: column;
     justify-content: center;
@@ -48,7 +48,7 @@ html, body {
     background-color: #fff;
     z-index: 100;
   }
-  #nav:target #close {
+  #nav.open #close {
     position: absolute;
     top: 20px;
     right: 20px;

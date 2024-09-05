@@ -1,4 +1,10 @@
 $(document).ready(() => {
+  $("#open-btn").on("click", function () {
+    $("#nav").addClass("open");
+  });
+  $("#close").on("click", function () {
+    $("#nav").removeClass("open");
+  });
   $("a").on("click", function (e) {
     const link = $(this).attr("href");
     e.preventDefault();
@@ -8,14 +14,6 @@ $(document).ready(() => {
     }
     if (link.includes("https")) {
       window.open(link);
-      return;
-    }
-    if (link === "#nav") {
-      $("#nav").addClass("open");
-      return;
-    }
-    if (link.includes("#!")) {
-      $("#nav").removeClass("open");
       return;
     }
     if (link.includes("#")) {
