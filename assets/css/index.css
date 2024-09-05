@@ -30,3 +30,36 @@ html, body {
 .menu-item:hover a::after {
   width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+  #nav.open {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 100;
+  }
+  #nav.open #close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: block;
+  }
+  #close span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  #close span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  #close span:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}

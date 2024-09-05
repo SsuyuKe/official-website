@@ -10,6 +10,14 @@ $(document).ready(() => {
       window.open(link);
       return;
     }
+    if (link.includes("nav")) {
+      $("#nav").addClass("open");
+      return;
+    }
+    if (link.includes("#!")) {
+      $("#nav").removeClass("open");
+      return;
+    }
     if (link.includes("#")) {
       if (!link.split("#")[1]) {
         // 到最上層
@@ -17,15 +25,16 @@ $(document).ready(() => {
       } else {
         // 到當頁目標
         const offsetTop = e.offsetTop;
+        $("#nav").removeClass("open");
         const target = document.getElementById(`${link.split("#")[1]}`);
         window.scrollTo({ top: target.offsetTop, behavior: "smooth" });
       }
     }
   });
 });
-// $(window).on("resize", function () {
-//   const mediaQuery = window.matchMedia("(max-width: 992px)");
-//   if (!mediaQuery.matches) {
-//     $("#nav-list").removeClass("open");
-//   }
-// });
+$(window).on("resize", function () {
+  const mediaQuery = window.matchMedia("(max-width: 768px)");
+  if (!mediaQuery.matches) {
+    $("#nav").removeClass("open");
+  }
+});
